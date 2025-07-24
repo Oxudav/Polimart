@@ -24,3 +24,6 @@ This is the backend for the Polimart media upload and authentication system. It 
 - `POST /media/upload`: Upload media file (requires JWT)
 - `GET /media`: List all uploaded media (requires JWT)
 - `GET /media/:id`: Download a media file (requires JWT)
+
+## Seed Dummy User
+- npm run seed
