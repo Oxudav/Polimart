@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "d5ef25b4-3e45-4f82-9a81-883c71dfc134",
+		"name": "Polimart API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46953196",
+		"_collection_link": "https://hkwoke-470103.postman.co/workspace/HK's-Workspace~897718e1-8e4e-4d25-8984-2ae58fc80e56/collection/46953196-d5ef25b4-3e45-4f82-9a81-883c71dfc134?action=share&source=collection_link&creator=46953196"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"test123\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Media",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:5000/media/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"media",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Media List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/media",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"media"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Media",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/media/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"media",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
