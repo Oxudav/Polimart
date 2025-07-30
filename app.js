@@ -15,8 +15,8 @@ connectDB();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // handles JSON requests
-app.use(express.urlencoded({ extended: true })); // handles URL-encoded form submissions
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Static folder for serving uploaded files
 app.use('/uploads', express.static('uploads'));
@@ -27,7 +27,7 @@ app.use('/media', mediaRoutes);
 
 // Base route
 app.get('/', (req, res) => {
-  res.send('🎉 Welcome to the Polimart API!');
+  res.send('Welcome to the Polimart API!');
 });
 
 // Centralized error handler
